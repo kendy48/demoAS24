@@ -14,17 +14,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 public class TestApplication implements WebMvcConfigurer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TestApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TestApplication.class, args);
+    }
 
-	@Bean
-	public Docket productApi() {
-		return new Docket(DocumentationType.SWAGGER_2)
-			.select()
-			.apis(RequestHandlerSelectors.basePackage(getClass().getPackage().getName()))
-			.paths(PathSelectors.any())
-			.build();
-	}
+    @Bean
+    public Docket productApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage(getClass().getPackage().getName()))
+                .paths(PathSelectors.any())
+                .build();
+    }
 
 }
